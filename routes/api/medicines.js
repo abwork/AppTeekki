@@ -29,11 +29,18 @@ router.post('/', (req, res) => {
     newMedicine.save().then(medicine => res.json(medicine));
 });    
 
+//PUT api/medicines/id route to update a medicine
+router.put('/:id', (req, res) => {
+    Medicine.findByIdAndUpdate(req.params.id, req.body)
+        .then(medicine => res.json(medicine))
+        .catch(err => res.status(404).json({ success: false }));
+});    
+ 
 //DELETE api/medicines/id route to delete a medicine
 router.delete('/:id', (req, res) => {
     Medicine.findById(req.params.id)
         .then(medicine => medicine.remove().then(()=> res.json({success: true})))
         .catch(err => res.status(404).json({ success: false }));
 });    
- 
+
 module.exports = router;
