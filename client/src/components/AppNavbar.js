@@ -8,14 +8,39 @@ import {
     NavItem,
     NavLink,
     Container
-}
+} from 'reactstrap';
 
 export default class AppNavbar extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+    state = {
+        isOpen: false
+    }
+
+    toggle = () => {
+        this.setState({
+           isOpen: !this.state.isOpen 
+        });
+
+    }
+
+    render() {
+        return (
+            <div>
+                <Navbar color="dark" dark expand="sm" className="mb-5">
+                    <Container>
+                        <NavbarBrand href="/">
+                            AppTeekki
+                        </NavbarBrand>
+                        <NavbarToggler onClick={this.toggle} />
+                        <Collapse isOpen={this.state.isOpen} navbar>
+                            <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <NavLink href="">Facebook</NavLink>
+                                </NavItem>
+                            </Nav>
+                        </Collapse>
+                    </Container>
+                </Navbar>
+            </div>
+        )
+    }
 }
