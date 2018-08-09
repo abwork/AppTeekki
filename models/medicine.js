@@ -13,11 +13,11 @@ const MedicineSchema = new Schema({
     // },
     general_information: {
         type: String,
-        required: true
+        // required: true
     },
     side_effects: {
         type: String,
-        required: true
+        // required: true
     },
     date: {
         type: Date,

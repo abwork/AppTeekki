@@ -34,7 +34,7 @@ export default class AppNavbar extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="">Facebook</NavLink>
+                                    <NavLink href="http://www.appteekki.heroku.com">DrugsInfo</NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
