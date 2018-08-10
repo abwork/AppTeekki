@@ -7,18 +7,14 @@ const MedicineSchema = new Schema({
         type: String,
         required: true
     },
-    // generic_name: {
+    // general_information: {
     //     type: String,
-    //     required: true
+    //     // required: true
     // },
-    general_information: {
-        type: String,
-        // required: true
-    },
-    side_effects: {
-        type: String,
-        // required: true
-    },
+    // side_effects: {
+    //     type: String,
+    //     // required: true
+    // },
     date: {
         type: Date,
         default: Date.now

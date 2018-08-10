@@ -60,17 +60,17 @@ class MedicineModal extends Component {
                     <ModalBody>
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>
-                                <Label for="medicine">Add</Label>
+                                <Label for="medicine">Medicine name</Label>
                                 <Input
                                     type="text"
                                     name="name"
                                     id="medicine"
-                                    placeholder="Add new medicine"
+                                    placeholder="Enter medicine name..."
                                     onChange={this.onChange}
                                 />
                                 <Button
                                     color="dark"
-                                    style={{marginBottom: '2rem'}}
+                                    style={{marginBottom: '2rem', marginTop: '2rem'}}
                                     block
                                 >Add to List
                                 </Button>

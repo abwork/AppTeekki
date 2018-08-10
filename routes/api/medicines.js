@@ -22,9 +22,6 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newMedicine = new Medicine({
         name: req.body.name
-        // generic_name: req.body.generic_name,
-        // general_information: req.body.general_information,
-        // side_effects: req.body.side_effects
     });
     newMedicine.save().then(medicine => res.json(medicine));
 });    

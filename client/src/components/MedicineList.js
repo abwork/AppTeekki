@@ -37,7 +37,7 @@ class MedicineList extends Component {
                                   color="danger"
                                   size="sm"
                                   onClick={this.onDeleteClick.bind(this, _id)}
-                                >&times; 
+                                > 
                                 </Button>    
                                     {name}
                                 </ListGroupItem>    
