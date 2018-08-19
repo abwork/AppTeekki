@@ -8,9 +8,16 @@ import {
     MEDICINES_LOADING 
 } from './types';
 
+//Loading the data from our lab (mLab)
+export const setMedicinesLoading = () => {
+    return {
+        type: MEDICINES_LOADING
+    };
+};
+
 //Get all the medicines in the list
-export const getMedicines = () => dispatch => {
-    dispatch(setMedicinesLoading());
+export const getMedicines = () => (dispatch) => {
+    // dispatch(setMedicinesLoading());
     axios.get('api/medicines').then(res => 
         dispatch({
             type: GET_MEDICINES,
@@ -58,9 +65,3 @@ export const updateMedicine = id => dispatch => {
     );
 };
 
-//Loading the data from our lab (mLab)
-export const setMedicinesLoading = () => {
-    return {
-        type: MEDICINES_LOADING
-    };
-};
