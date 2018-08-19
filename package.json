@@ -1,0 +1,40 @@
+{
+  "name": "appteekki",
+  "version": "1.0.0",
+  "description": "Drug info app built with MERN-stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client-install": "npm install --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abwork/AppTeekki.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Express",
+    "React",
+    "Redux",
+    "Node"
+  ],
+  "author": "Abdisome",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abwork/AppTeekki/issues"
+  },
+  "homepage": "https://github.com/abwork/AppTeekki#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
