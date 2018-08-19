@@ -17,20 +17,19 @@ class MedicineList extends Component {
     render() {
         const { medicines } = this.props.medicine;
         return(
-            // <div className="container #eceff1 blue-grey lighten-5">
-                <ul className="collapsible">
-                    { medicines.map(({_id, name, general_information, side_effects}) => (  
-                        <li  key= {_id}>
-                          <div className="collapsible-header"><i className="material-icons" onClick={this.onDeleteClick.bind(this, _id)}>delete</i>{name}</div>
-                          <div className="collapsible-body">
-                            <p>{general_information}</p>
-                            <p className="red-text"><i className="material-icons">warning</i>Side effects: {side_effects}</p>
-                          </div>
-                        </li>
-                    ))}
-                </ul>
+            <ul className="collapsible">
+                { medicines.map(({_id, name, general_information, side_effects}) => (  
+                    <li  key= {_id}>
+                        <div className="collapsible-header">{name}</div>
+                        <div className="collapsible-body">
+                        <p>{general_information}</p>
+                        <p className="red-text"><i className="material-icons">warning</i>Side effects: {side_effects}</p>
+                        <a onClick={this.onDeleteClick.bind(this, _id)} class="waves-effect waves-light btn-small"><i class="material-icons right">delete</i>Delete</a>
+                        </div>
+                    </li>
+                ))}
+            </ul>
 
-            // </div>
         );
     }
 }
