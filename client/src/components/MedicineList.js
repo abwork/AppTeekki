@@ -24,7 +24,7 @@ class MedicineList extends Component {
                         <div className="collapsible-body">
                         <p>{general_information}</p>
                         <p className="red-text"><i className="material-icons">warning</i>Side effects: {side_effects}</p>
-                        <a onClick={this.onDeleteClick.bind(this, _id)} className="waves-effect text-red teal darken-3 btn-small"><i className="material-icons right">delete</i>Delete</a>
+                        <a onClick={this.onDeleteClick.bind(this, _id)} className="waves-effect text-white teal darken-3 btn-small"><i className="material-icons right">delete</i>Delete</a>
                         </div>
                     </li>
                 ))}
