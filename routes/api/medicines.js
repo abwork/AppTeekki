@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //medicine model
-const Medicine = require('../../models/Medicine');
+const Medicine = require('../../models/medicine');
 
 //GET api/medicines route to get all medicines
 router.get('/', (req, res) => {
