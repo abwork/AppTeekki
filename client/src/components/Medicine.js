@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { getMedicine } from '../actions/medicineActions';
-// import MedicineList from '../components/MedicineList';
 
 class Medicine extends Component {
     render() {
