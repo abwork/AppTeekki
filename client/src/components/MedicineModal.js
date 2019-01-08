@@ -48,7 +48,7 @@ class MedicineModal extends Component {
         return(
             <div>
                 {/* <a  onClick={this.toggle} className="btn-floating btn-large waves-effect waves-light black"><i className="material-icons"></i></a>  */}
-                <a class="waves-effect waves-light text-white black btn-large" onClick={this.toggle}><i class="material-icons left">add</i>ADD NEW</a>
+                <a className="waves-effect waves-light text-white black btn-large" onClick={this.toggle}><i className="material-icons left">add</i>ADD NEW</a>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
