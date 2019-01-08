@@ -2,3 +2,7 @@ h1.card-title {
   text-transform: capitalize;
 }
 
+collapsible-header {
+  display: flex;
+  justify-items: center;
+}

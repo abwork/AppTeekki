@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import AppNavbar from './components/AppNavbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar';
 import './App.css';
 import MedicineList from './components/MedicineList';
 import MedicineModal from './components/MedicineModal';
@@ -13,8 +12,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <AppNavbar />
           <Container>
+            <NavBar />
             <MedicineModal />
             <MedicineList />
           </Container>

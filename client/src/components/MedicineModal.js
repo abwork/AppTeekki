@@ -9,6 +9,10 @@ import {
     Input
 } from 'reactstrap';
 
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+
+
 import { connect } from 'react-redux';
 import { addMedicine } from '../actions/medicineActions';
 
@@ -47,8 +51,9 @@ class MedicineModal extends Component {
     render() {
         return(
             <div>
-                {/* <a  onClick={this.toggle} className="btn-floating btn-large waves-effect waves-light black"><i className="material-icons"></i></a>  */}
-                <a className="waves-effect waves-light text-white black btn-large" onClick={this.toggle}><i className="material-icons left">add</i>ADD NEW</a>
+                <Fab color="primary" position="center" aria-label="Add" onClick={this.toggle}>
+                    <AddIcon />
+                </Fab>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
