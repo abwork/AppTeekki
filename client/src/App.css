@@ -2,7 +2,12 @@ h1.card-title {
   text-transform: capitalize;
 }
 
-collapsible-header {
+div.collapsible-header {
+  margin: 10px;
   display: flex;
-  justify-items: center;
+  justify-content: space-between;
+}
+
+div.medicine__name {
+  font-size: 1.5em;
 }

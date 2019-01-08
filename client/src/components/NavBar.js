@@ -41,7 +41,7 @@ class MenuAppBar extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ anchorEl: null });
+    this.setState({ anchorEl: null});
   };
 
   render() {

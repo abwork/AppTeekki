@@ -8,6 +8,7 @@ import {
     FormGroup,
     Input
 } from 'reactstrap';
+import '../App.css';
 
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
@@ -51,7 +52,7 @@ class MedicineModal extends Component {
     render() {
         return(
             <div>
-                <Fab color="primary" position="center" aria-label="Add" onClick={this.toggle}>
+                <Fab color="primary" position="center" aria-label="Add" onClick={this.toggle} className="add__medicine">
                     <AddIcon />
                 </Fab>
                 <Modal

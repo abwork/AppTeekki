@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMedicines, deleteMedicine } from '../actions/medicineActions';
 import PropTypes from 'prop-types';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Fab from '@material-ui/core/Fab';
 
 
 class MedicineList extends Component {
@@ -20,11 +22,21 @@ class MedicineList extends Component {
             <ul className="collapsible">
                 { medicines.map(({_id, name, general_information, side_effects}) => (  
                     <li  key= {_id}>
-                        <div className="collapsible-header">{name}</div>
+                        <div className="collapsible-header">
+                            <div className="medicine__name">
+                                {name}
+                            </div>
+                            <div className="delete__btn">
+                                <a onClick={this.onDeleteClick.bind(this, _id)} >
+                                    <Fab color="secondary" position="right" aria-label="Delete" size="small" onClick={this.toggle} className="add__medicine">
+                                        <DeleteIcon />
+                                    </Fab>
+                                </a>
+                            </div>
+                        </div>
                         <div className="collapsible-body">
                         <p>{general_information}</p>
                         <p className="red-text"><i className="material-icons">warning</i>Side effects: {side_effects}</p>
-                        <a onClick={this.onDeleteClick.bind(this, _id)} className="waves-effect text-white teal darken-3 btn-small"><i className="material-icons right">delete</i>Delete</a>
                         </div>
                     </li>
                 ))}
