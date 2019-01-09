@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -24,9 +24,10 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  marginBottom: 4
 };
 
-class MenuAppBar extends React.Component {
+class MenuAppBar extends Component {
   state = {
     auth: true,
     anchorEl: null,

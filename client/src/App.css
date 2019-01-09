@@ -2,7 +2,7 @@ h1.card-title {
   text-transform: capitalize;
 }
 
-div.collapsible-header {
+div.panel__header {
   margin: 10px;
   display: flex;
   justify-content: space-between;
@@ -10,4 +10,7 @@ div.collapsible-header {
 
 div.medicine__name {
   font-size: 1.5em;
+}
+div.panel__body {
+  font-family: "Roboto", "Helvetica";
 }

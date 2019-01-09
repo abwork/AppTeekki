@@ -14,8 +14,8 @@ class App extends Component {
         <div className="App">
           <Container>
             <NavBar />
-            <MedicineModal />
             <MedicineList />
+            <MedicineModal />
           </Container>
         </div>
       </Provider>

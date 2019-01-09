@@ -4,7 +4,55 @@ import { getMedicines, deleteMedicine } from '../actions/medicineActions';
 import PropTypes from 'prop-types';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
+import { withStyles } from '@material-ui/core/styles';
+import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
+import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import Icon from '@material-ui/core/Icon';
 
+const ExpansionPanel = withStyles({
+    root: {
+      border: '1px solid rgba(0,0,0,.125)',
+      boxShadow: 'none',
+      '&:not(:last-child)': {
+        borderBottom: 0,
+      },
+      '&:before': {
+        display: 'none',
+      },
+    },
+    expanded: {
+      margin: 'auto',
+    },
+  })(MuiExpansionPanel);
+  
+  const ExpansionPanelSummary = withStyles({
+    root: {
+      backgroundColor: 'rgba(0,0,0,.03)',
+      borderBottom: '1px solid rgba(0,0,0,.125)',
+      marginBottom: -1,
+      minHeight: 56,
+      '&$expanded': {
+        minHeight: 56,
+      },
+    },
+    content: {
+      '&$expanded': {
+        margin: '12px 0',
+      },
+    },
+    expanded: {},
+  })(props => <MuiExpansionPanelSummary {...props} />);
+  
+  ExpansionPanelSummary.muiName = 'ExpansionPanelSummary';
+  
+  const ExpansionPanelDetails = withStyles(theme => ({
+    root: {
+      padding: theme.spacing.unit * 2,
+    },
+  }))(MuiExpansionPanelDetails);
+  
 
 class MedicineList extends Component {
 
@@ -12,20 +60,30 @@ class MedicineList extends Component {
         this.props.getMedicines();
     };
 
+    state = {
+        expanded: 'panel',
+      };
+    
+    handleChange = panel => (event, expanded) => {
+        this.setState({
+          expanded: expanded ? panel : false,
+        });
+      };
+          
     onDeleteClick = id => {
         this.props.deleteMedicine(id);
     };
 
+    
     render() {
         const { medicines } = this.props.medicine;
+        const { expanded } = this.state;
+
         return(
-            <ul className="collapsible">
+            <div>
                 { medicines.map(({_id, name, general_information, side_effects}) => (  
-                    <li  key= {_id}>
-                        <div className="collapsible-header">
-                            <div className="medicine__name">
-                                {name}
-                            </div>
+                    <ExpansionPanel expanded={expanded === _id } onChange={this.handleChange(_id)}>
+                        <ExpansionPanelSummary className="panel__header">
                             <div className="delete__btn">
                                 <a onClick={this.onDeleteClick.bind(this, _id)} >
                                     <Fab color="secondary" position="right" aria-label="Delete" size="small" onClick={this.toggle} className="add__medicine">
@@ -33,14 +91,21 @@ class MedicineList extends Component {
                                     </Fab>
                                 </a>
                             </div>
-                        </div>
-                        <div className="collapsible-body">
-                        <p>{general_information}</p>
-                        <p className="red-text"><i className="material-icons">warning</i>Side effects: {side_effects}</p>
-                        </div>
-                    </li>
+                            <div>
+                                <Typography className="medicine__name"> 
+                                    <h5>{name}</h5>
+                                </Typography>                            
+                            </div>
+                        </ExpansionPanelSummary>
+                        <ExpansionPanelDetails className="panel__body">
+                            <Typography>
+                                <div>{general_information}</div>
+                                <div><Icon>alert</Icon>{side_effects}</div>
+                            </Typography>
+                        </ExpansionPanelDetails>
+                    </ExpansionPanel>
                 ))}
-            </ul>
+            </div>
 
         );
     }
@@ -48,7 +113,7 @@ class MedicineList extends Component {
 
 MedicineList.propTypes = {
     getMedicines: PropTypes.func.isRequired,
-    medicine: PropTypes.object.isRequired
+    medicine: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
