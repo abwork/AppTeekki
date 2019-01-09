@@ -66,7 +66,7 @@ class MenuAppBar extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              MediLogger - Online Medicines Info Registration
+              MediLogger - Medicines Info Registration
             </Typography>
             {auth && (
               <div>

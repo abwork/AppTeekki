@@ -92,15 +92,15 @@ class MedicineList extends Component {
                                 </a>
                             </div>
                             <div>
-                                <Typography className="medicine__name"> 
-                                    <h5>{name}</h5>
+                                <Typography variant="h6" className="medicine__name"> 
+                                    {name}
                                 </Typography>                            
                             </div>
                         </ExpansionPanelSummary>
                         <ExpansionPanelDetails className="panel__body">
-                            <Typography>
+                            <Typography variant="subtitle1">
                                 <div>{general_information}</div>
-                                <div><Icon>alert</Icon>{side_effects}</div>
+                                <div><Icon>star</Icon>Side effects: {side_effects}</div>
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
